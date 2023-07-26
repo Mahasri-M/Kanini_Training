@@ -1,0 +1,33 @@
+<h1>Mortgage Calculator</h1>
+<div class="container">
+<div class="input-group">
+  <label>Purchase Price: $<span id="purchasePriceValue">{{ purchasePrice }}</span></label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="range" min="0" max="1000000" step="1000" [(ngModel)]="purchasePrice">
+</div>
+<br>
+
+<div class="input-group">
+  <label>Down Payment: $<span id="downPaymentValue">{{ downPayment }}</span></label>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="range" min="0" max="1000000" step="1000" [(ngModel)]="downPayment">
+</div>
+<br>
+<div class="input-group">
+  <label>Repayment Time: {{ repaymentTime }} years</label>&nbsp;
+  <input type="range" min="1" max="30" step="1" [(ngModel)]="repaymentTime">
+</div>
+<br>
+<div class="input-group">
+  <label>Interest Rate: {{ interestRate }}%</label>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="range" min="0" max="10" step="0.1" [(ngModel)]="interestRate">
+</div>
+<br>
+<div class="calculate-button">
+  <button (click)="calculateMortgage()">Calculate Mortgage</button>
+</div>
+<br>
+<div class="results" *ngIf="loanAmount !== 0">
+  <p>Loan Amount: ${{ loanAmount }}</p>
+  <p>Monthly Payment: ${{ monthlyPayment }}</p>
+</div>
+</div>
+<br>

@@ -1,0 +1,14 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  h2{
+   font-style: italic;
+   color:rgb(171, 43, 135);
+    padding: 20px;
+   margin-left: 43%;
+  }

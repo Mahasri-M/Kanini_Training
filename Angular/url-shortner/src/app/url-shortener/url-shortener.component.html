@@ -1,0 +1,6 @@
+<textarea name="" id="" cols="51" rows="10" [(ngModel)]="urlInput" placeholder="Enter a valid URL"></textarea>
+<br>
+<br>
+<button (click)="shortenUrl()" id="btn">Shorten</button>
+
+<shortened-url-display [shortenedUrl]="shortenedUrl"></shortened-url-display>
