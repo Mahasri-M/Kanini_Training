@@ -1,0 +1,29 @@
+create project-web api
+create a folder Auth
+
+create class (ex:userroles.cs)
+
+in that 
+
+public const string Admin="admin";
+
+public const string User="user";
+
+
+ex:registermodel.cs
+
+[Required(ErrorMessage="Un required)]
+
+public string username{get;set;}=string.Empty;
+
+"
+"
+" for email and pass
+
+ex:loginmodel.cs
+
+"email pass
+
+ex.responses.cs
+
+public string? status {get; set;}

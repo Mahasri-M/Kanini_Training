@@ -1,0 +1,70 @@
+															API CODE FIRST
+
+		  													ONE TO MANY
+
+1:	Create a asp.net core web API project
+2:	Remove weathercontroller
+3:	install using nuget package manager tool
+       1)entityframeworkcore
+	 2)entityframeworkcore.sqlserver
+	 3)entityframeworkcore.design
+4:	Go to appsettings.json and Add these lines
+	,
+  "ConnectionStrings": {
+    "SQLConnection": "data source=.\\SQLEXPRESS; initial catalog=food; integrated security=SSPI;TrustServerCertificate=True;"
+  }
+
+5:	Go to program.cs add these lines before build option
+	
+	builder.Services.AddDbContext<CONTEXTNAME>(optionsAction:options =>options.UseSqlServer(builder.Configuration.GetConnectionString( name: "ConnectionNAME")));
+
+6:	Create a folder "Models"
+7:	Create a class inside model for tables
+8:	In a table file (ex:Emp.cs)
+		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int Empno{get;set;}
+		[Required] (^&-=@#not null)
+		public string Empname{get;set;}=string.Empty;
+
+for foreign key		
+use 'prop'
+it will generate a line
+modify the variable name
+	//	[ForeignKey(nameof(Dept))]
+	//	public int Deptno{get;set;} 
+deleted after migration	
+	instead
+		public int? Deptno{get;set;}
+		public virtual Dept? DeptnoRef{get;set;}	
+	
+for this we have to make the reference in the dept table
+in the dept table
+		public virtual ICollection<Emp>? EmpRef{get;set;}
+9:	Create a class named as 'dbnamecontext.cs'
+10:	inside that public class dbnamecontext:DBContext
+11:	'ctor' for constructor
+12:	public dbnamecontext(DbContextOptions<dbnamecontext> options):base(options){}
+13:	public DbSet<Dept>{get;set;}  for all of the tables
+14:	protected override  --   code will automatically generate
+15:	come back to program.cs change the dbcontextname
+16:	Build solution
+17:	In package manager console, type 'dir'
+18: 	Type cd and give the file name
+19:	type 'dotnet ef'
+20:	dotnet ef migrations add CreateDB 
+21:	dotnet ef database update
+22:	edit table details in sql by using edit top 100 rows
+23:	inside controller right click ->Add->controller->api->actions using EF
+24:   create controller for each table
+25:   Create a folder named repository or service
+26:	inside repository right click->add->interface->IRepoInterface.cs
+27:	create a class deptservice
+28:	inside that public class deptservice:IRepoInterface
+29:	create a class empservice(for every table)
+30:	inside that public class empservice:IRepoInterface
+31:	(Ex)public Task<List<Emp>> GetAllEmp(){}
+32:	inside the interface paste the above lines
+33:	in program.cs -> builder.Services.AddScoped<IRepoInterface,EmpService>();
+34:	
+	

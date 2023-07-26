@@ -1,0 +1,15 @@
+D:\kanini training\C#\DesignPatternCode\Factory\bin\Debug\net7.0\Factory.exe
+D:\kanini training\C#\DesignPatternCode\Factory\bin\Debug\net7.0\Factory.deps.json
+D:\kanini training\C#\DesignPatternCode\Factory\bin\Debug\net7.0\Factory.runtimeconfig.json
+D:\kanini training\C#\DesignPatternCode\Factory\bin\Debug\net7.0\Factory.dll
+D:\kanini training\C#\DesignPatternCode\Factory\bin\Debug\net7.0\Factory.pdb
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.csproj.AssemblyReference.cache
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.GeneratedMSBuildEditorConfig.editorconfig
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.AssemblyInfoInputs.cache
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.AssemblyInfo.cs
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.csproj.CoreCompileInputs.cache
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.dll
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\refint\Factory.dll
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.pdb
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\Factory.genruntimeconfig.cache
+D:\kanini training\C#\DesignPatternCode\Factory\obj\Debug\net7.0\ref\Factory.dll

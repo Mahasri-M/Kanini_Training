@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8hbIuSGGnncFtrgEaA/BhzsglsX7BFuv2aoNj9ZmuoU=",
+  "Source": "busticket",
+  "BasePath": "_content/busticket",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

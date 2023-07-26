@@ -1,0 +1,38 @@
+											----API DB FIRST ONE TO MANY----
+
+
+
+
+In SQL:
+create a DB with tables and columns only
+
+
+1:	create project with web api
+2:	install using nuget package manager tool
+     1)entityframeworkcore
+	 2)entityframeworkcore.sqlserver
+	 3)entityframeworkcore.tools
+3:	open package manager console
+
+	scaffold-dbcontext "data source=.\SQLEXPRESS; initial catalog=food; integrated security=SSPI; TrustServerCertificate=True;" 	Microsoft.EntityframeworkCore.SqlServer -OutputDir Models
+
+	(it will scaffold the db and the tables in the db will come under the models folder)
+4:	Go to context file and comment the warning and builder line and add {} for the empty function
+5:	Go to appsettings.json and Add these lines
+	,
+  "ConnectionStrings": {
+    "SQLConnection": "data source=.\\SQLEXPRESS; initial catalog=food; integrated security=SSPI;TrustServerCertificate=True;"
+  }
+
+6:	Go to program.cs add these lines before build option
+	
+	builder.Services.AddDbContext<CONTEXTNAME>(optionsAction:options =>options.UseSqlServer(builder.Configuration.GetConnectionString( name: "ConnectionNAME")));
+
+7:	Build solution
+
+8:	Right click the controller
+	Click add => controller=>API=> empty or actions with entity framework 
+9:	A pop up will open , in model class do one by one for each tables, dbcontext click the context 	
+10:	Create a folder name it as Repository or service
+11:	Inside that folder, create a folder for each table
+12:	Inside each folder, create an interface file and a class file.

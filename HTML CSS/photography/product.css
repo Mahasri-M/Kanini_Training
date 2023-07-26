@@ -1,0 +1,304 @@
+.nav{
+    list-style-type: none;
+    display: flex;
+    justify-content:center;
+    text-decoration:overline;
+    margin-top: -35px;
+}
+li{
+    padding-left: 30px;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ul li:hover{
+    color:#ff5e14;
+}
+a:hover{
+    color:#ff5e14;
+}
+.log:hover{
+    color:#ff5e14;
+}
+.dropdown-item:hover{
+    background-color: #ff5e14;
+}
+.mainimg{
+    margin-left: 340px;
+}
+h3{
+    margin-left:630px;
+    margin-top:-330px;
+}
+.description{
+    text-align: justify;
+    margin-top: 300px;
+}
+#quote{
+    font-size: 40px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+.img2{
+    padding-left: 20px;
+}
+.img3{
+    padding: 30px 0px 20px 0px;
+    margin-left: 300px;
+}
+.img4{
+    padding-left: 20px;
+}
+
+    .logo{
+        display:flex;
+        justify-content: left;
+    }
+    .log{
+        margin-top:20px;
+    }
+    ul {
+        margin: 0px;
+        padding: 0px;
+      }
+      .footer-section {
+        background: #151414;
+        position: relative;
+      }
+      .footer-cta {
+        border-bottom: 1px solid #373636;
+      }
+      .single-cta i {
+        color: #ff5e14;
+        font-size: 30px;
+        float: left;
+        margin-top: 8px;
+      }
+      .cta-text {
+        padding-left: 15px;
+        display: inline-block;
+      }
+      .cta-text h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cta-text span {
+        color: #757575;
+        font-size: 15px;
+      }
+      .footer-content {
+        position: relative;
+        z-index: 2;
+      }
+      .footer-pattern img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 330px;
+        background-size: cover;
+        background-position: 100% 100%;
+      }
+      .footer-logo {
+        margin-bottom: 30px;
+      }
+      .footer-logo img {
+        max-width: 200px;
+      }
+      .footer-text p {
+        margin-bottom: 14px;
+        font-size: 14px;
+        color: #7e7e7e;
+        line-height: 28px;
+      }
+      .footer-social-icon{
+          margin-top: 120px;
+          margin-left: 30px;
+      }
+      .footer-social-icon span {
+        color: #fff;
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 20px;
+      }
+      .footer-social-icon a {
+        color: #fff;
+        font-size: 16px;
+        margin-right: 15px;
+      }
+      .footer-social-icon i {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 38px;
+        border-radius: 50%;
+      }
+      
+      .facebook-bg {
+        background: #3b5998;
+      }
+      .twitter-bg {
+        background: #55acee;
+      }
+      .instagram-bg {
+        background: #dd4b39;
+      }
+      .footer-widget-heading h3 {
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 350px;
+        position: relative;
+        margin-left: 20px;
+      }
+      .footer-widget-heading h3::before {
+        content: "";
+        position: absolute;
+        left: -500px;
+        bottom: -300px;
+        height: 2px;
+        width: 50px;
+        background: #ff5e14;
+      }
+      .footer-widget ul li {
+        display: inline-block;
+        float: left;
+        width: 50%;
+        margin-top: 12px;
+      }
+      .footer-widget ul li a:hover {
+        color: #ff5e14;
+      }
+      .footer-widget ul li a {
+        color: #878787;
+        text-transform: capitalize;
+      }
+      .subscribe-form {
+        position: relative;
+        overflow: hidden;
+      }
+      .subscribe-form input {
+        width: 100%;
+        padding: 14px 28px;
+        background: #2e2e2e;
+        border: 1px solid #2e2e2e;
+        color: #fff;
+      }
+      .subscribe-form button {
+        position: absolute;
+        right: 0;
+        background: #ff5e14;
+        padding: 13px 20px;
+        border: 1px solid #ff5e14;
+        top: 0;
+      }
+      .subscribe-form button i {
+        color: #fff;
+        font-size: 22px;
+        transform: rotate(-6deg);
+      }
+      .copyright-area {
+        background: #202020;
+        padding: 25px 0;
+      }
+      .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #878787;
+      }
+      .copyright-text p a {
+        color: #ff5e14;
+      }
+      .footer-menu li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+      .footer-menu li:hover a {
+        color: #ff5e14;
+      }
+      .footer-menu li a {
+        font-size: 14px;
+        color: #878787;
+      }
+      .span{
+           
+        color:#ff5e14; 
+      }
+      .span :hover{
+          background-color: #ff5e14; 
+        color:white; 
+        width:15px;
+      
+      }
+      .flip-card{
+        background-color: white;
+        width: 400px;
+        height: 400px;
+      }
+      .flip-card-inner{
+        position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(19, 9, 9, 0.68);
+      
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      
+      .flip-card-front {
+        background-color: #bbbbbb00;
+        color: black;
+      }
+      .flip-card-front p{
+        color:#ff5e14;
+        padding: 20px;
+        font-size: 25px;
+      }
+      
+      .flip-card-back {
+        background-color: #ff5e14;
+        color: white;
+        transform: rotateY(180deg);
+      }
+      .flip-card-back h1{
+        margin-top: 45%;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      #row1{
+        padding-left: 80px;
+      }
+      #row2{
+        padding-left: 300px;
+      }
+      .tag {
+        width: 100px;
+        height: 50px;
+        color:white;
+        background: #ff5e14;
+        position: relative;
+        animation: myanime 5s 3;
+        animation-fill-mode: forwards;
+      }
+      
+      @keyframes myanime {
+        20%   {left: 0px; background: rgb(219, 21, 27); width: 200px;}
+        100% {left: 580px; background:linear-gradient(rgba(184, 172, 172),rgb(209, 68, 12)); width: 300px;}
+      }

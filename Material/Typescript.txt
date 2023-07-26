@@ -1,0 +1,117 @@
+												---	TYPESCRIPT ---
+
+To install->open cmd->npm i -g typescript
+
+Version: tsc --version
+
+change the path where u want
+with cd cmd
+
+code main.ts   --it will automatically open vscode
+
+type something in main.ts
+
+by using the 'tsc main.ts' cmd will add a js file
+
+to run in cmd prompt type 'node main.js'
+
+//variable declaration
+
+var number=1;
+let count=3;
+
+---var is used and supported---
+
+to declare with a specific datatype and enum:
+
+let a:number;
+let b:string;
+let c:boolean;
+let d:any;
+let e:number[]=[1,2,3];
+let f:any[]=[1,'a',true];
+
+enum Color{ Red=1,Blue=2,Green=3};
+let background= Color.Blue;
+
+--TYPE ASSERTIONS--
+
+let color='red';
+let endswithD=color.endsWith('d');
+
+//OR
+
+ let color;
+ color='red';
+ let endswithD=(<string>color).endsWith('d');
+
+//OR
+
+let color;
+color='red';
+let endswithD=(color as string).endsWith('d');
+
+--ARROW FUNCTIONS--
+
+let log= function(message){
+    console.log(message)
+}							//normal
+
+//OR
+
+let doLog=message => console.log(message)			//if we have a single statement
+
+//OR
+
+let doLog=(message) => {
+    console.log(message)
+}							//multi statement
+
+-- INTERFACE  --
+
+let draw=(point:{x:string,y:number,z:number})=>{
+    //,
+}
+draw({x:'b',y:2,z:3})
+
+here we have to give all the datatype individually
+so the INTERFACE came.
+
+interface Point{
+    x:string,
+    y:number,
+    z:number  
+   }
+   let draw=(point:Point)=>{
+    //,
+}
+draw({x:'b',y:2,z:3})
+
+--CLASS--
+
+class Point{
+    x:string;
+    y:number;
+    z:number;
+    draw=():any=>{
+        console.log('X:'+this.x+' Y:'+this.y+' Z:'+this.z)
+    }
+
+   drawRectangle:()=>{
+   draw()
+   }
+}
+let shape= new Point();
+shape.x='a';
+shape.y=10;
+shape.z=8;
+shape.draw()
+   
+let shape2= new Point();
+shape2.x='b';
+shape2.y=12;
+shape2.z=18;
+shape2.draw()
+
+--CONSTRUCTOR--
+

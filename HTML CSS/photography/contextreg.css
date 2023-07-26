@@ -1,0 +1,50 @@
+h3{
+    color:black;
+    text-align: center;
+}
+.nav{
+    list-style-type: none;
+    display: flex;
+    justify-content:center;
+    text-decoration:overline;
+    margin-top: -35px;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+    justify-content: space-between;
+}
+li{
+    padding-left: 30px;
+}
+.contact{
+    font-size: 23px;
+    color: black;
+}
+.red{
+    color:red;
+    font-size: 15px;
+    margin-left: 140px;
+}
+.logo{
+    display:flex;
+    justify-content: left;
+}
+.log{
+    margin-top:20px;
+}
+ul li:hover{
+    color:#ff5e14;
+}
+a:hover{
+    color:#ff5e14;
+}
+.log:hover{
+    color:#ff5e14;
+}
+.dropdown-item:hover{
+    background-color: #ff5e14;
+}

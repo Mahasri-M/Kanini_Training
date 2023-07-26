@@ -1,0 +1,76 @@
+diff b/w connected and disconnected architecture
+
+
+connected data needs connection to be created to access hence slower while disconnected is in memory data that's faster access. to access connected data you use ADO.NET whereas for disconnected you do not use. disc
+
+CONNECTED :
+
+connected arch requires connection all the tym ..if not it wont wrk. 
+this is the main disadvantage.
+the data have to stored will lost if the connection lost.
+so the disconnected used / came.
+
+DATAREADER 
+is Connected Architecture since it keeps the connection open until all rows are fetched one by one. 
+
+EX:sqlcommand cmd=new sqlcommand("select *..")
+con.open();
+sqldatareader dr=cmd.executereader();
+while(dr.read()){
+}
+
+DISCONNECTED:
+
+DataSet is Disconnected Architecture since all the records are brought at once and there is no need to keep the connection alive.
+
+advantage
+
+no need of connection all the time
+no problem will occur even when the conn lost
+
+Dataset is the small database which is available in the client side.
+All the details or data provided in the client side is stored in the dataset
+the dataset is connected to the database
+if the connection lost the data stored in the dataset 
+if the connection becomes alive , the data saved back to the database
+client -> dataset -> database
+
+disadvantage:
+slow overheat
+
+dataset stores schema and data in application memory area
+
+we r using command to select or store the multiple records from the table
+here the LINQ comes
+LINQ-Language Integrated Query
+.NET+SQL=LINQ  (we r having .net inside we r adding SQL, so called LINQ)
+COMMAND which is used to select a specific data from database to dataset
+
+DATA ADAPTER:
+
+when we r going to fetch some record from database to dataset by using query, the data adapter is used to read the record.
+
+acts as bridge bw dataset and database
+fetches all rows at once
+
+EX:
+dataset ds= new dataset();
+sqldata adapter sda=new sqldata adapter();
+sda.fill(ds);
+foreach(){}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

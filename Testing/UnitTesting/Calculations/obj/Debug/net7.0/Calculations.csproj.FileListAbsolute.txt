@@ -1,0 +1,12 @@
+D:\kanini training\C#\UnitTesting\Calculations\bin\Debug\net7.0\Calculations.deps.json
+D:\kanini training\C#\UnitTesting\Calculations\bin\Debug\net7.0\Calculations.dll
+D:\kanini training\C#\UnitTesting\Calculations\bin\Debug\net7.0\Calculations.pdb
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.csproj.AssemblyReference.cache
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.GeneratedMSBuildEditorConfig.editorconfig
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.AssemblyInfoInputs.cache
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.AssemblyInfo.cs
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.csproj.CoreCompileInputs.cache
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.dll
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\refint\Calculations.dll
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\Calculations.pdb
+D:\kanini training\C#\UnitTesting\Calculations\obj\Debug\net7.0\ref\Calculations.dll

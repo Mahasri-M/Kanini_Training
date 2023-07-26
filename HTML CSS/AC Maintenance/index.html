@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>AC Maintenance Service</title>
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script> 
+</head> 
+<body>            
+<h1>AC Maintenance Service</h1> 
+<form action="#" method="post" onsubmit="return bookAppointment()"> 
+<div class="form-lable-wrap"> 
+<label for=" customerName "> Customer Name </label> 
+</div> 
+<div class="form-input-wrap"> 
+<input type="text" id="customerName" name="Customer Name" placeholder="Enter your Name" required> 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="Gender">Gender</label> 
+</div> 
+<div class="form-input-wrap"> 
+<INPUT TYPE="Radio" Name="Gender" Value="Male" checked>Male 
+<INPUT TYPE="Radio" Name="Gender" Value="Female">Female 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="mobileNumber">Mobile number</label> 
+</div> 
+<div class="form-input-wrap"> 
+<input type="tel" id="mobileNumber " name="Mobile Number " placeholder="Enter your Mobile number" 
+pattern="^[7-9][0-9]{9}$" maxLength="10" minLength="10" 
+title="Enter 10 digit mobile number starts with 7,8 or 9" required> 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="email">Email ID</label> 
+</div> 
+<div class="form-input-wrap"> 
+<input type="email" id="email" name="email" placeholder="Enter your Email Id" required> 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="address">Address</label> 
+</div> 
+<div class="form-input-wrap"> 
+<textarea id="address" name="address" rows="5" cols="25" placeholder="Enter your address" 
+required></textarea> 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="acType">AC Type</label> 
+</div> 
+<div class="form-input-wrap"> 
+<input list="acTypes" name="acTyper" id="acType" required> 
+<datalist id="acTypes"> 
+<option value="Split"> 
+<option value="Window"> 
+<option value="Centralized"> 
+<option value="Portable"> 
+</datalist> 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="serviceTypes">Service Type</label> 
+</div> 
+<div class="form-input-wrap"> 
+<select name="serviceType" id="serviceTypes" required> 
+<option value="Cleaning"> Cleaning </option> 
+<option value="Repair"> Repair </option> 
+<option value="Gas Refil"> Gas Refil </option> 
+</select> 
+</div> 
+<div class="form-lable-wrap"> 
+<label for="dateForAppointment">Date for Appointment</label> 
+</div> 
+<div class="form-input-wrap"> 
+<input type="date" id="dateForAppointment" name="dateforAppointment" required><br><br> 
+<input type="checkbox" id="yearlyMaintenance" name=" yearlyMaintenance" value="yearly Maintenance"> 
+<label for="yearlyMaintenance">Select if Required</label>
+</div> 
+<div class="form-lable-wrap"> 
+<label for="duration "> Duration in month from the previous service </label> 
+</div> 
+<div class="form-input-wrap"> 
+<input type="range" id="duration" name="duration" value="0" min="0" max="6" step="1" title="0 to 6 Months" 
+onchange="showRangevalue(this.value)"> 
+<div id="show-range-value">0 Months</div> 
+</div> 
+<div class="clear"></div> 
+<div class="form-input-wrap"> 
+<input class="form-action" type="submit" value="Submit"> 
+<input class="form-action" type="reset" value="Clear"> 
+</div> 
+<div class="clear"></div> 
+</form> 
+<div id="result"></div> 
+</body> 
+</html>

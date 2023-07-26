@@ -1,0 +1,194 @@
+tools(7),sqlserver,design,core,jwt bearer(6.0.15),newtonsoft json(6.0.15),web.codegeneration.design(6.0.13)
+
+model folder
+3 tables
+faculty
+student
+user
+
+
+create context in models
+
+appsettings 
+
+"Jwt": {
+    "Key": "Yh2k7QSu4l8CZg5p6X3Pna9L0Miy4D3Bvt0JVr87UcOj69Kqw5R2Nmf4FWs03Hdx",
+    "Issuer": "JWTAuthenticationServer",
+    "Audience": "JWTServicePostmanClient",
+    "Subject": "JWTServiceAccessToken"
+  }
+program.cs
+------------------------------
+using project.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<FacultyStudentContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("OnetooManyCon")));
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
+
+// Adding Authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+
+// Adding Jwt Bearer
+.AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["JWT:Audience"],
+        ValidIssuer = builder.Configuration["JWT:Issuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
+    };
+});
+builder.Services.AddScoped<IEmp, EmpRepo>();
+builder.Services.AddScoped<ICust, CustRepo>();
+
+builder.Services.AddScoped<IRoom, RoomRepo>();
+
+builder.Services.AddScoped<IHotel, HotelRepo>();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+---------------------------------
+
+jwt in  program.cs
+
+app.Authentication();
+
+
+console->Add-Migration 'init'
+
+
+987654123434567init change the identity elements 
+
+Update-database
+
+create controllers
+right click->controller->api->empty for each table
+
+
+for jwt token
+controller->api->empty->tokencontroller.cs
+--------------------------------------
+using project.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using project;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace SampOnetoManyAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TokenController : ControllerBase
+    {
+        public IConfiguration _configuration;
+        private readonly FacultyStudentContext _context;
+
+        public TokenController(IConfiguration config, FacultyStudentContext context)
+        {
+            _configuration = config;
+            _context = context;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(User _userData)
+        {
+            if (_userData != null && _userData.UserEmail != null && _userData.Password != null)
+            {
+                var user = await GetUser(_userData.UserEmail, _userData.Password);
+
+                if (user != null)
+                {
+                    //create claims details based on the user information
+                    var claims = new[] {
+                        new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                        new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                         new Claim("UserId", user.UserId.ToString()),
+                         new Claim("Email", user.UserEmail),
+                        new Claim("Password",user.Password)
+
+                    };
+
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+                    var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        _configuration["Jwt:Issuer"],
+                        _configuration["Jwt:Audience"],
+                        claims,
+                        expires: DateTime.UtcNow.AddMinutes(10),
+                        signingCredentials: signIn);
+
+                    return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+                }
+                else
+                {
+                    return BadRequest("Invalid credentials");
+                }
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        private async Task<User> GetUser(string email, string password)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.UserEmail == email && u.Password == password);
+        }
+    }
+}
+
+
+-------------------------------------
+
+in all controller use [Authorize] expect token and user
+
+
+postman -> users get
+post users raw json
+
+to generate token
+post-https://localhost:44395/api/Token
+token post raw json
+paste the copied token in ->authorization->bearer token->paste in token field

@@ -1,0 +1,60 @@
+body { 
+background-color: #0ca2b9; 
+margin-left: 10%; 
+width: 80%; 
+} 
+h1{ 
+color: #FFFFFF; 
+font-family: Calibri; 
+font-style: italic; 
+background-color: #900043; 
+text-align: center; 
+} 
+.form-lable-wrap { 
+width: 50%; 
+clear: both; 
+float: left; 
+margin-bottom: 10px; 
+} 
+
+.form-input-wrap { 
+width: 50%; 
+float: right; 
+margin-bottom: 10px; 
+} 
+.clear { 
+clear: both; 
+} 
+
+.form-action { 
+background-color: #556b2f; 
+font-family: Candara; 
+font-weight: bold; 
+width: 10em; 
+height: 35px; 
+border-radius: 10px; 
+}
+input[type=text], 
+input[type=tel], 
+input[type=email], 
+input[type=date], 
+input[type=range], 
+#acType, 
+select, 
+datalist, 
+textarea { 
+width: 200px; 
+} 
+#show-range-value { 
+width: 200px; 
+text-align: center; 
+font-weight: bold; 
+} 
+#result { 
+font-weight: bold; 
+font-family: Arial; 
+font-size: 24px; 
+color: #782e07; 
+width: 72%; 
+text-align: justify; 
+} 

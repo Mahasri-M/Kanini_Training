@@ -1,0 +1,29 @@
+go to the path
+
+
+git init
+
+git clone www.linkofgit
+
+git add folder
+
+git status
+
+git commit -m "msg"
+
+git push
+
+
+
+
+------------------
+
+git checkout -b feature/Develop  -> to switch between branches
+
+git push --set-upstream origin feature/Develop   -> to push in the particular branch
+
+-----------------
+
+git checkout -b feature/Develop -> to switch
+
+git pull origin feature/Develop  -> to pull from a particular branch
