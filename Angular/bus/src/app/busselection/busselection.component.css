@@ -1,0 +1,66 @@
+li{
+    padding: 20px;
+    font-size: 25px;
+    color: brown;
+    font-weight: bold;
+}
+ul li{
+    text-decoration: none;
+}
+p{
+    font-size: 25px;
+   
+}
+#selection{
+    width: 1400px;
+    height:300px;
+    /* border: 1px solid gray; */
+}
+#lower,
+#upper{
+    border: 1.5px solid black;
+    width:530px;
+    height:220px;
+    margin:80px;
+}
+button{
+    padding:25px;
+    margin:10px;
+    font-size: 15px;
+    /* width:13%;
+    height: 10%; */
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+td{
+    padding: 3px;
+}
+.lastrow{
+    padding: 2px 1px;
+}
+#lastrow{
+    padding:4px 28px;
+}
+button:focus{
+    background-color: #1e81b0;
+} 
+.passdet{
+    margin-left:570px;
+    color:black;
+    width: 20%;
+}
+  
+h2{
+    font-size: 20px;
+    margin-left: 11%;
+    margin-top: 5%;
+}
+#bookbtn{
+   margin-left: 20%;
+}
+a{
+    color: white;
+    text-decoration: none;
+    width: 20px;
+}
+  

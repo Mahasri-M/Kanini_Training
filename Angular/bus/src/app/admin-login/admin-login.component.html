@@ -1,0 +1,65 @@
+<!-- 
+    <h1>Admin Login</h1>
+    <div class="container">
+    <form [formGroup]="adminform " class="border border-gray" (ngSubmit)="adminLogin()">
+    <table>
+        <tr class="form-group"><td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" class="form-control" required formControlName="name"></td>
+            <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && Name.touched">Username Required!!</div>
+          <div class="form-text text-danger" *ngIf="Name.errors?.['minlength']">
+            Username is too short!!
+          </div>
+          </tr>
+          
+          <tr class="form-group">
+            <td> <label for="pass">Password:</label></td>
+            <td> <input type="password" id="pass" class="form-control"  required formControlName="pwd"></td>
+            <div class="form-text text-danger" *ngIf="Pwd.errors?.['required']&&Pwd.touched">Password required!!</div>
+          <div class="form-text text-danger" *ngIf="Pwd.errors?.['minlength']">Password length should be more than 6 charaters!!</div>  
+            </tr>
+            <br>
+            <tr>
+                <td>
+            <div class="form-group" >
+                &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; <button type="submit" class="btn btn-success" id="btn">Login</button>
+
+              </div>
+              </td></tr>
+    </table>
+    
+</form>
+</div> -->
+
+
+<h1>Admin Login</h1>
+<div class="container">
+  <form [formGroup]="adminform" class="border border-gray" (ngSubmit)="adminLogin()">
+    <table>
+      <tr class="form-group">
+        <td><label for="name">Name:</label></td>
+        <td>
+          <input type="text" id="name" class="form-control" required formControlName="name">
+          <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && Name.touched">Username Required!!</div>
+          <div class="form-text text-danger" *ngIf="Name.errors?.['minlength']">Username is too short!!</div>
+        </td>
+      </tr>
+
+      <tr class="form-group">
+        <td><label for="pass">Password:</label></td>
+        <td>
+          <input type="password" id="pass" class="form-control" required formControlName="pwd">
+          <div class="form-text text-danger" *ngIf="Pwd.errors?.['required'] && Pwd.touched">Password required!!</div>
+          <div class="form-text text-danger" *ngIf="Pwd.errors?.['minlength']">Password length should be more than 6 characters!!</div>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" id="btn"><a routerLink='adminpage'>Login</a></button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

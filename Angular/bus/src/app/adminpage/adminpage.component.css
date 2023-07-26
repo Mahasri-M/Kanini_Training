@@ -1,0 +1,39 @@
+#form1{
+    padding: 2%;
+}
+label{
+    padding: 12px;
+}
+.container{
+    width: 30%;
+}
+input{
+    size: 30%;
+}
+#update{
+    width: 220%;
+    margin-left: 100%;
+}
+#upd{
+    background-color: rgb(23, 171, 224);
+    color: white;
+}
+#delete{
+    background-color: rgb(207, 21, 21);
+    color: #fff;
+}
+.bookcontainer{
+    width: 30%;
+    margin-left: 35%;
+}
+form{
+    padding: 2%;
+}
+#add{
+    margin-left: 88% ;
+    width: 5%;
+}
+#adding{
+    width: 5%; 
+    margin-top:3% ; 
+}

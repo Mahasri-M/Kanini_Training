@@ -1,0 +1,79 @@
+<br>
+  <div class="bus">
+    <h2> <i class="bx bx-bus"></i> Selected Bus: {{ selectedButton }}</h2>
+    <h2> <i class="bx bx-chair"></i> Selected Seat: {{ selectedSeat }}</h2>
+    <h2> <i class="bx bx-time"></i> Timing: {{ vehitiming }}</h2>
+    <h2> <i class="bx bx-wind"></i> Type: {{ bustype }}</h2>
+    <h2> <i class="bx bx-rupee"></i> Price: {{ totalPrice }}</h2>
+  </div>
+  
+<div class="whole">
+  <!-- <form [formGroup]="pdfview" (ngSubmit)="submitPassengerDetails()">
+    <table>
+       
+      <tr class="form-group"><td><label for="name">Name:</label></td>
+      <td><input type="text" id="name" class="form-control" required formControlName="passenger_name"></td>
+    </tr>
+    <tr class="form-group">
+      <td ><label for="age">Age:</label></td>
+      <td><input type="number" id="age" class="form-control" required formControlName="age"></td>
+    </tr>
+  <tr class="form-group">
+      <td><label for="gender">Gender:</label></td>
+      <td><input type="text" id="age" class="form-control"  required formControlName="gender"></td>
+     </tr>
+    <tr class="form-group">
+      <td><label for="mobile">Mobile Number:</label></td>
+      <td> <input type="number" id="mobile" class="form-control"  required formControlName="mobile"></td>
+  
+    <tr class="form-group">
+    <td> <label for="name">Email:</label></td>
+    <td> <input type="text" id="email" class="form-control"  required formControlName="email"></td>
+    </tr>
+    <br>
+    <div class="form-group" >
+      &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; <button class="btn btn-success"  id="btn">Book</button>
+    </div>
+</table>
+</form> -->
+<form [formGroup]="pdfview" (ngSubmit)="sendEmail()">
+  <table>
+    <tr class="form-group">
+      <td><label for="name">Name:</label></td>
+      <td><input type="text" id="name" class="form-control" required formControlName="passenger_name"></td>
+    </tr>
+    <tr class="form-group">
+      <td><label for="age">Age:</label></td>
+      <td><input type="number" id="age" class="form-control" required formControlName="age"></td>
+    </tr>
+    <tr class="form-group">
+      <td><label for="gender">Gender:</label></td>
+      <td><input type="text" id="gender" class="form-control" required formControlName="gender"></td>
+    </tr>
+    <tr class="form-group">
+      <td><label for="mobile">Mobile Number:</label></td>
+      <td><input type="number" id="mobile" class="form-control" required formControlName="mobile"></td>
+    </tr>
+    <tr class="form-group">
+      <td><label for="email">Email:</label></td>
+      <td><input type="email" id="email" class="form-control" required formControlName="email"></td>
+    </tr>
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success" id="btn">Book</button>
+    </div>
+  </table>
+</form>
+
+<br>
+<p *ngIf="bookingResult">{{ bookingResult }}</p>
+<br>
+<br>
+<button (click)="generatePdf('open')" class="btn btn-secondary" [disabled]="!bookingResult">Open PDF</button>&nbsp;
+<button (click)="generatePdf('download')" class="btn btn-secondary" [disabled]="!bookingResult">Download PDF</button>
+
+<!-- <button (click)="sendEmail()">Send</button>
+ -->
+
+<app-email></app-email>
+    </div>

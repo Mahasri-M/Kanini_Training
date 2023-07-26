@@ -1,0 +1,59 @@
+<div class="container">
+  <form [formGroup]="signupForm" (ngSubmit)="AddNewUser()" class="border border-gray">
+    <div class="row g-0">
+      <div class="col text-center p-2 mb-3 bg-light">
+        <span class="fs-3">Signup</span>
+        
+      </div>
+    </div> 
+    <table >
+      
+      <tr class="form-group"><td><label for="name">Name:</label></td>
+      <td><input type="text" id="name" class="form-control" required formControlName="name"></td>
+      <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && Name.touched">Username Required!!</div>
+    <div class="form-text text-danger" *ngIf="Name.errors?.['minlength']">
+      Username is too short!!
+    </div>
+    </tr>
+   
+    <tr class="form-group">
+      <td><label for="mobile">Mobile:</label></td>
+      <td> <input type="number" id="mobile" class="form-control"  required formControlName="mobile"></td>
+      <div class="form-text text-danger" *ngIf="Mobile.errors?.['required'] && Mobile.touched">Mobile number Required!!</div>
+      <div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern']">Mobile Number invalid!!</div>
+      <div class="form-text text-danger" *ngIf="Mobile.errors?.['minlength']">Too short!!</div>
+      <div class="form-text text-danger" *ngIf="Mobile.errors?.['maxlength']">Too long!!</div>
+  
+    <tr class="form-group">
+    <td> <label for="name">Email:</label></td>
+    <td> <input type="text" id="email" class="form-control"  required formControlName="email"></td>
+    <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && Email.touched">EmailID Required!!</div>
+    <div class="form-text text-danger" *ngIf="Email.errors?.['email']">EmailID invalid!!</div>
+  
+    </tr>
+
+    <tr class="form-group">
+      <td> <label for="name">Password:</label></td>
+      <td> <input type="password" id="email" class="form-control"  required formControlName="pwd"></td>
+      <div class="form-text text-danger" *ngIf="Pwd.errors?.['required']&&Pwd.touched">Password required!!</div>
+    <div class="form-text text-danger" *ngIf="Pwd.errors?.['minlength']">Password length should be more than 6 charaters!!</div>  
+      </tr>
+      
+    <br>
+    <div class="form-group" >
+      &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; <button class="btn btn-success" id="btn">Sign In</button>
+    </div>
+<br>
+   
+</table>
+<h6 class="log">Already have an account? <a class="login" routerLink='login'>Login</a></h6>
+</form>
+<br>
+
+ 
+    </div>
+    <div class="result">
+      <p *ngIf="bookingResult">{{ bookingResult }}</p>
+      <br>
+      <button class="btn btn-secondary" [disabled]="!bookingResult" id="gobtn"><a routerLink='main' >Go</a></button>&nbsp;
+      </div>

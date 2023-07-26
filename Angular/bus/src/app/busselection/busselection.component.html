@@ -1,0 +1,145 @@
+<!-- <br>
+<p class="mt-2 d-flex justify-content-center ">Available Buses</p>
+
+<div>
+  <label for="minPrice">Min Price:</label>
+  <input type="number" id="minPrice" [(ngModel)]="filterMinPrice" />
+</div>
+<div>
+  <label for="maxPrice">Max Price:</label>
+  <input type="number" id="maxPrice" [(ngModel)]="filterMaxPrice" />
+</div>
+<button (click)="filterBusesByPrice()">Filter</button>
+
+<div *ngFor="let bus of filteredBuses">
+  {{ bus }}
+
+  <div class="d-flex justify-content-center" id="selection">
+      
+    <div id="lower">
+      <table>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L1',timing)">L1</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L2',timing)">L2</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L3',timing)">L3</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L4',timing)">L4</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L5',timing)">L5</button></td>
+      </table>
+      <table>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L6',timing)">L6</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L7',timing)">L7</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L8',timing)">L8</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L9',timing)">L9</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L10',timing)" id="lastrow">L10</button></td>
+        </table><br>
+        <table>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L11',timing)">L11</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L12',timing)">L12</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L13',timing)">L13</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L14',timing)">L14</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L15',timing)">L15</button></td>
+          </table>
+  
+    </div>
+    <div id="upper">
+      <table>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U1',timing)">U1</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U2',timing)">U2</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U3',timing)">U3</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U4',timing)">U4</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U5',timing)">U5</button></td>
+        </table>
+        <table>
+          <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U6',timing)">U6</button></td>
+          <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U7',timing)">U7</button></td>
+          <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U8',timing)">U8</button></td>
+          <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U9',timing)">U9</button></td>
+          <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U10',timing)" id="lastrow">U10</button></td>
+          
+          </table><br>
+          <table>
+            <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U11',timing)">U11</button></td>
+            <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U12',timing)">U12</button></td>
+            <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U13',timing)">U13</button></td>
+            <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U14',timing)">U14</button></td>
+            <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U15',timing)">U15</button></td>
+            </table>
+    </div>
+      </div>
+      <br>
+      
+</div> -->
+
+<ul >
+  <li *ngFor="let bus of availableBuses">
+    {{ bus }}
+    
+    <div class="d-flex justify-content-center" id="selection">
+      
+  <div id="lower">
+    <table>
+    <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L1',timing,type)">L1</button></td>
+    <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L2',timing,type)">L2</button></td>
+    <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L3',timing,type)">L3</button></td>
+    <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L4',timing,type)">L4</button></td>
+    <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L5',timing,type)">L5</button></td>
+    </table>
+    <table>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L6',timing,type)">L6</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L7',timing,type)">L7</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L8',timing,type)">L8</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L9',timing,type)">L9</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'L10',timing,type)" id="lastrow">L10</button></td>
+      </table><br>
+      <table>
+        <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L11',timing,type)">L11</button></td>
+        <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L12',timing,type)">L12</button></td>
+        <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L13',timing,type)">L13</button></td>
+        <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L14',timing,type)">L14</button></td>
+        <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'L15',timing,type)">L15</button></td>
+        </table>
+
+  </div>
+  <div id="upper">
+    <table>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U1',timing,type)">U1</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U2',timing,type)">U2</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U3',timing,type)">U3</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U4',timing,type)">U4</button></td>
+      <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U5',timing,type)">U5</button></td>
+      </table>
+      <table>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U6',timing,type)">U6</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U7',timing,type)">U7</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U8',timing,type)">U8</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U9',timing,type)">U9</button></td>
+        <td><button class="btn btn-secondary" (click)="showPassengerForm(bus,'U10',timing,type)" id="lastrow">U10</button></td>
+        
+        </table><br>
+        <table>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U11',timing,type)">U11</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U12',timing,type)">U12</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U13',timing,type)">U13</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U14',timing,type)">U14</button></td>
+          <td class="lastrow"><button class="btn btn-secondary" id="lastrow" (click)="showPassengerForm(bus,'U15',timing,type)">U15</button></td>
+          </table>
+  </div>
+    </div>
+    <br>
+    
+      <div class="passdet">
+        <div *ngIf="selectedButton === bus">
+          <div class="border border-dark">
+          <h2> <i class="bx bx-bus"></i> Selected Bus: {{ selectedButton }}</h2>
+          <h2> <i class="bx bx-chair"></i> Selected Seat: {{ selectedSeat }}</h2>
+          <h2> <i class="bx bx-time"></i> Timing: {{ vehitiming }}</h2>
+          <h2> <i class="bx bx-wind"></i> Type: {{ bustype }}</h2>
+          <h2> <i class="bx bx-rupee"></i> Price: {{ totalPrice }}</h2>
+            
+         <button class="btn btn-secondary" id="bookbtn"><a routerLink='pdfpage' (click)="navigateToPdfPage()"  >B O O K &nbsp;N O W</a></button>
+         </div>
+    </div></div>
+  </li>
+</ul>
+
+
+

@@ -1,0 +1,31 @@
+form{
+    width: 500px;
+    padding: 10px;
+}
+.container{
+    height:80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    margin-left: 8%;
+}
+#btn{
+    width: 190%;
+    margin-left: 100%;
+}
+p{
+    margin-left: 35%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.login{
+    text-decoration: none;
+    color: green;
+}
+h6{
+    margin-left: 18%;
+}

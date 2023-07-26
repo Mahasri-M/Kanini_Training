@@ -1,0 +1,63 @@
+<!-- 
+<div class="container">
+<form (ngSubmit)="login(email.value, pwd.value)">
+  <h3>Login Here</h3>
+
+  <label for="username">Username</label>
+  <input type="text" placeholder="Email or Phone" id="email" #email>
+
+  <label for="password">Password</label>
+  <input type="password" placeholder="Password" id="pwd" #pwd>
+
+  <button routerLink='/main'>Log In</button>
+ 
+</form>
+<div class="popup" *ngIf="successMessage">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <p style="color: black;">Logged in Successfully!</p>
+  </div>
+</div>
+</div> -->
+
+
+<div class="container">
+  <form (ngSubmit)="login(email.value, pwd.value)"  [formGroup]="loginForm" class="border border-gray">
+    <div class="row g-0">
+      <div class="col text-center p-2 mb-3 bg-light">
+        <span class="fs-3">Login</span>
+        
+      </div>
+    </div> 
+    <table >
+      
+     
+  
+    <tr class="form-group">
+    <td> <label for="email">Email:</label></td>
+    <td> <input type="text" id="email" #email class="form-control"  required formControlName="email"></td>
+    <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && Email.touched">EmailID Required!!</div>
+    <div class="form-text text-danger" *ngIf="Email.errors?.['email']">EmailID invalid!!</div>
+  
+    </tr>
+
+    <tr class="form-group">
+      <td> <label for="pwd">Password:</label></td>
+      <td> <input type="password" id="pwd" #pwd class="form-control"  required formControlName="pwd"></td>
+      <div class="form-text text-danger" *ngIf="Pwd.errors?.['required'] && Pwd.touched">Password required!!</div>
+    <div class="form-text text-danger" *ngIf="Pwd.errors?.['minlength']">Password length should be more than 6 charaters!!</div>  
+      </tr>
+      
+    <br>
+    <div class="form-group" >
+      &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; <button class="btn btn-success" id="btn" >Login</button>
+    </div>
+<br>
+   
+</table>
+<h6 class="log">Doesn't have an account? <a class="login" routerLink='signin'>Sign in</a></h6>
+</form>
+<br>
+
+    </div>
+  

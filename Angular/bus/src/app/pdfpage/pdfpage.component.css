@@ -1,0 +1,29 @@
+
+label{
+    color: black;
+}
+.whole{
+    align-items: center;
+    padding-left: 600px;
+}
+input{
+    border: 2px solid gray;
+    margin-left: 20px;
+}
+.bus{
+    padding-left: 300px;
+}
+h2{
+    font-size: 20px;
+}
+#btn{
+    width: 150%;
+  margin-left: 70%;
+}
+p{
+    margin-left: -5%; 
+    font-weight: bold;
+}
+.btn{
+    margin-left: 40px;
+}

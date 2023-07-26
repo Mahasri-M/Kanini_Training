@@ -1,0 +1,338 @@
+<br>
+<h4>User details</h4>
+
+<button *ngIf="!isAddFormOpen" class="btn btn-success" id="add" (click)="openAddusers()">Add</button>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+          
+            <td>{{user.userId}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.pwd}}</td>
+            <td>
+                <button (click)="openUpdateForm(user)" class="btn btn-info" id="upd">Update</button>
+            </td>           
+            <td>
+                <button (click)="deleteUser(user.userId)" class="btn btn-danger" id="delete">Delete</button> 
+            </td>
+        </tr>
+
+        </tbody>
+</table>
+<br>
+<br>
+
+<div class="container">
+<form *ngIf="isUpdateFormOpen" class="border border-gray" id="form1">
+    <table>
+        
+    <tr class="form-group" >
+      <td>  <label for="studid"> Id : </label></td>
+      <td>  <input type="text" id="studId" class="form-control"
+        name="studid" [(ngModel)]="id"></td>
+    </tr>
+    <tr class="form-group" >
+      <td>  <label for="studname"> Name : </label></td>
+      <td>  <input type="text" id="studname" [(ngModel)]="student.name" class="form-control"
+        [ngModelOptions]="{standalone: true}"></td>
+    </tr>
+    <tr class="form-group" >
+       <td> <label for="studcity"> Email : </label></td>
+      <td>  <input type="text" id="studcity" [(ngModel)]="student.email" class="form-control"
+        [ngModelOptions]="{standalone: true}"></td>
+    </tr>
+    <tr class="form-group" >
+       <td> <label for="studpin">Mobile : </label></td>
+      <td>  <input type="text" id="studpin" [(ngModel)]="student.mobile" class="form-control"
+        [ngModelOptions]="{standalone: true}"></td>
+    </tr>
+    <tr class="form-group" >
+        <td> <label for="studpin">Password : </label></td>
+       <td>  <input type="text" id="studpin" [(ngModel)]="student.pwd" class="form-control"
+         [ngModelOptions]="{standalone: true}"></td>
+     </tr>
+    <tr class="form-group" >
+        <input type="button" value="Update" class="btn btn-success" (click)="UpdateStudentById()"  id="update">
+    </tr>
+    </table>
+</form>
+
+</div>
+
+<form [formGroup]="AddStudentForm" *ngIf="isAddFormOpen" (ngSubmit)="AddNewStudent()">
+    <!-- <div class="form-group" >
+        <label for="studid"> Id : </label>
+        <input type="text" id="studid" class="form-control"
+        name="studid" formControlName="userId">
+    </div> -->
+    <div class="form-group" >
+        <label for="studname"> Name : </label>
+        <input type="text" id="studname" class="form-control"
+        name="studname" formControlName="name">
+    </div>
+    <div class="form-group" >
+        <label for="studcity"> Email : </label>
+        <input type="text" id="studcity" class="form-control"
+        name="studcity" formControlName="email">
+    </div>
+    <div class="form-group" >
+        <label for="studpin">Mobile : </label>
+        <input type="text" id="studpin" class="form-control"
+        name="studpin" formControlName="mobile">
+    </div>
+    <div class="form-group" >
+        <label for="studpin">Password: </label>
+        <input type="text" id="studpin" class="form-control"
+        name="studpin" formControlName="pwd">
+    </div>
+    <div class="form-group" >
+        <input type="submit" value="Add" class="btn btn-success" id="adding">
+    </div>
+</form>
+
+<!-- book  -->
+<h4>Booking details</h4>
+
+    <button *ngIf="!isAddbookFormOpen" class="btn btn-success" id="add" (click)="openAddbooks()">Add</button>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of bookings">
+            <td>{{book.bookingId}}</td>
+            <td>{{book.passenger_Name}}</td>
+            <td>{{book.age}}</td>
+            <td>{{book.gender}}</td>
+            <td>{{book.email}}</td>
+            <td>{{book.mobile}}</td>
+            <td>  
+                <button (click)="openUpdateFormbook(book)" class="btn btn-info" id="upd">Update</button>
+            </td> 
+            <td>
+                <button (click)="deleteBooking(book.bookingId)" class="btn btn-danger">Delete</button> 
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<br>
+<div class="bookcontainer">
+    <form *ngIf="isUpdateFormOpenbook" class="border border-gray">
+        <table>
+            
+        <tr class="form-group" >
+          <td>  <label for="studid"> Id : </label></td>
+          <td>  <input type="text" id="studid" class="form-control"
+            name="studid" [(ngModel)]="id"></td>
+        </tr>
+        
+        <tr class="form-group" >
+          <td>  <label for="studname"> Name : </label></td>
+          <td>  <input type="text" id="studname" [(ngModel)]="book.passenger_Name" class="form-control"
+            [ngModelOptions]="{standalone: true}"></td>
+        </tr>
+        <tr class="form-group" >
+            <td> <label for="studcity"> Age : </label></td>
+           <td>  <input type="text" id="studcity" [(ngModel)]="book.age" class="form-control"
+             [ngModelOptions]="{standalone: true}"></td>
+         </tr>
+         <tr class="form-group" >
+            <td> <label for="studcity"> Gender : </label></td>
+           <td>  <input type="text" id="studcity" [(ngModel)]="book.gender" class="form-control"
+             [ngModelOptions]="{standalone: true}"></td>
+         </tr>
+        <tr class="form-group" >
+           <td> <label for="studcity"> Email : </label></td>
+          <td>  <input type="text" id="studcity" [(ngModel)]="book.email" class="form-control"
+            [ngModelOptions]="{standalone: true}"></td>
+        </tr>
+        <tr class="form-group" >
+           <td> <label for="studpin">Mobile : </label></td>
+          <td>  <input type="text" id="studpin" [(ngModel)]="book.mobile" class="form-control"
+            [ngModelOptions]="{standalone: true}"></td>
+        </tr>
+        <tr class="form-group" >
+            <input type="button" value="Update" class="btn btn-success" (click)="UpdateBookingById()" id="update">
+        </tr>
+        </table>
+    </form>
+    
+    </div>
+
+    <form [formGroup]="AddBookingForm" *ngIf="isAddbookFormOpen" (ngSubmit)="AddNewBooking()">
+        
+        <div class="form-group" >
+            <label for="studname"> Name : </label>
+            <input type="text" id="studname" class="form-control"
+            name="studname" formControlName="passenger_name">
+        </div>
+        <div class="form-group" >
+            <label for="studcity"> Age : </label>
+            <input type="text" id="studcity" class="form-control"
+            name="studcity" formControlName="age">
+        </div>
+        <div class="form-group" >
+            <label for="studcity"> Gender : </label>
+            <input type="text" id="studcity" class="form-control"
+            name="studcity" formControlName="gender">
+        </div>
+        <div class="form-group" >
+            <label for="studcity"> Email : </label>
+            <input type="text" id="studcity" class="form-control"
+            name="studcity" formControlName="email">
+        </div>
+        <div class="form-group" >
+            <label for="studpin">Mobile : </label>
+            <input type="text" id="studpin" class="form-control"
+            name="studpin" formControlName="mobile">
+        </div>
+
+        <div class="form-group" >
+            <input type="submit" value="Add" class="btn btn-success" id="adding">
+        </div>
+    </form>
+
+    <br>
+    <br>
+    <h4>Bus Details</h4>
+    
+    <button *ngIf="!isAddbusFormOpen" class="btn btn-success" id="add" (click)="openAddbuses()">Add</button>
+<br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">BusName</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Timing</th>
+                <th scope="col">Boarding</th>
+                <th scope="col">Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bus of buses">
+                <td>{{bus.busId}}</td>
+                <td>{{bus.busname}}</td>
+                <td>{{bus.price}}</td>
+                <td>{{bus.type}}</td>
+                <td>{{bus.timing}}</td>
+                <td>{{bus.boarding}}</td>
+                <td>{{bus.destination}}</td>
+                <td>  
+                    <button (click)="openUpdateFormbus(bus)" class="btn btn-info" id="upd">Update</button>
+                </td> 
+                <td>
+                    <button (click)="deleteBus(bus.busId)" class="btn btn-danger">Delete</button> 
+                </td>
+            </tr>
+    
+        </tbody>
+    </table>
+
+    <form [formGroup]="AddBusForm" *ngIf="isAddbusFormOpen" (ngSubmit)="AddNewBus()">
+        
+        <div class="form-group" >
+            <label for="studname"> Busname : </label>
+            <input type="text" id="studname" class="form-control"
+            name="studname" formControlName="busname">
+        </div>
+        <div class="form-group" >
+            <label for="studcity"> Price : </label>
+            <input type="number" id="studcity" class="form-control"
+            name="studcity" formControlName="price">
+        </div>
+        <div class="form-group" >
+            <label for="studcity"> Type : </label>
+            <input type="text" id="studcity" class="form-control"
+            name="studcity" formControlName="type">
+        </div>
+        <div class="form-group" >
+            <label for="studcity"> Timing : </label>
+            <input type="text" id="studcity" class="form-control"
+            name="studcity" formControlName="timing">
+        </div>
+        <div class="form-group" >
+            <label for="studpin">Boarding : </label>
+            <input type="text" id="studpin" class="form-control"
+            name="studpin" formControlName="boarding">
+        </div>
+        <div class="form-group" >
+            <label for="studpin">Destination : </label>
+            <input type="text" id="studpin" class="form-control"
+            name="studpin" formControlName="destination">
+        </div>
+
+        <div class="form-group" >
+            <input type="submit" value="Add" class="btn btn-success" id="adding">
+        </div>
+    </form>
+    <div class="buscontainer">
+        <form *ngIf="isUpdateFormOpenbus" class="border border-gray">
+            <table>
+                
+            <tr class="form-group" >
+              <td>  <label for="studid"> Id : </label></td>
+              <td>  <input type="text" id="studid" class="form-control"
+                name="studid" [(ngModel)]="id"></td>
+            </tr>
+            
+            <tr class="form-group" >
+              <td>  <label for="studname"> Name : </label></td>
+              <td>  <input type="text" id="studname" [(ngModel)]="bus.busname" class="form-control"
+                [ngModelOptions]="{standalone: true}"></td>
+            </tr>
+            <tr class="form-group" >
+                <td> <label for="studcity"> Price : </label></td>
+               <td>  <input type="text" id="studcity" [(ngModel)]="bus.price" class="form-control"
+                 [ngModelOptions]="{standalone: true}"></td>
+             </tr>
+             <tr class="form-group" >
+                <td> <label for="studcity"> Type : </label></td>
+               <td>  <input type="text" id="studcity" [(ngModel)]="bus.type" class="form-control"
+                 [ngModelOptions]="{standalone: true}"></td>
+             </tr>
+            <tr class="form-group" >
+               <td> <label for="studcity"> Timing : </label></td>
+              <td>  <input type="text" id="studcity" [(ngModel)]="bus.timing" class="form-control"
+                [ngModelOptions]="{standalone: true}"></td>
+            </tr>
+            <tr class="form-group" >
+               <td> <label for="studpin">Boarding : </label></td>
+              <td>  <input type="text" id="studpin" [(ngModel)]="bus.boarding" class="form-control"
+                [ngModelOptions]="{standalone: true}"></td>
+            </tr>
+            <tr class="form-group" >
+                <td> <label for="studpin">Destination : </label></td>
+               <td>  <input type="text" id="studpin" [(ngModel)]="bus.destination" class="form-control"
+                 [ngModelOptions]="{standalone: true}"></td>
+             </tr>
+            <tr class="form-group" >
+                <input type="button" value="Update" class="btn btn-success" (click)="UpdateBusById()" id="update">
+            </tr>
+            </table>
+        </form>
+        
+        </div>

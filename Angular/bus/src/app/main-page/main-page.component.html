@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="image-container">
+  <img src="../../assets/banner.jpg" width="100%" height="500px" >
+ 
+<section class="search-bar">
+  <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="row">
+                      <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                          <input type="text" [(ngModel)]="boardingPoint" class="form-control search-slt" placeholder="Leaving from">
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                          <input type="text" [(ngModel)]="destination" class="form-control search-slt" placeholder="Going to">
+                      </div>
+                      
+                      <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                   
+                          <input type="text" placeholder="Date of Journey" [(ngModel)]="selectedDate" class="form-control search-slt" onfocus="(this.type='date')" >
+                              </div>
+                      <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                          <button type="button" (click)="searchBuses()" [routerLink]="['busselection']" class="btn btn-primary wrn-btn">Search</button>
+                           </div>
+                  </div>
+              </div>
+          </div>
+         </div>
+</section>
+
+</div>
+</div>
+
