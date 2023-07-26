@@ -1,0 +1,29 @@
+<p>updatestudent works!</p>
+
+
+<form >
+    <div class="form-group" >
+        <label for="studid"> Id : </label>
+        <input type="text" id="studid" class="form-control"
+        name="studid" [(ngModel)]="id">
+    </div>
+    <div class="form-group" >
+        <label for="studname"> Name : </label>
+        <input type="text" id="studname" [(ngModel)]="student.name"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group" >
+        <label for="studcity"> City : </label>
+        <input type="text" id="studcity" [(ngModel)]="student.city" 
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group" >
+        <label for="studpin">Pin : </label>
+        <input type="text" id="studpin" [(ngModel)]="student.pin"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group" >
+        <input type="button" value="Update" class="btn btn-success"
+        (click)="UpdateStudentById()">
+    </div>
+</form>

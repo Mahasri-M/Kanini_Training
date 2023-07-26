@@ -1,0 +1,10 @@
+<!-- <p>servers component!</p> -->
+<button class="btn btn-primary" 
+[disabled]="!serverCreateOption" 
+(click)="onServerAdd()"
+>
+    Add server</button>
+
+<p>Prop value:{{serverCreateOption}}</p>
+<p >{{serverStatus}}</p>
+<app-server></app-server>

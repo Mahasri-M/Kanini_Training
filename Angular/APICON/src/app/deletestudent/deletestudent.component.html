@@ -1,0 +1,11 @@
+<p>deletestudent works!</p>
+<form  (ngSubmit)="DeleteStudentById()">
+    <div class="form-group" >
+        <label for="studid"> Id : </label>
+        <input type="text" [(ngModel)]="id" name="studid" placeholder="Enter Student id" >
+    </div>
+    <div class="form-group" >
+        <input type="submit" value="Fetch" class="btn btn-success">
+    </div>
+
+</form>
